@@ -11,6 +11,36 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 
+    [
+        'uses' => 'FilmeController@index'
+    ]
+);
+
+Route::get('/delete/filme/{id}', 
+    [
+        'uses' => 'FilmeController@delete',
+        'as' => 'delete.filme'
+    ]
+);
+
+Route::get('/detail/filme/{id}', 
+    [
+        'uses' => 'FilmeController@detail',
+        'as' => 'detail.filme'
+    ]
+);
+
+Route::get('/update/filme/{id}', 
+    [
+        'uses' => 'FilmeController@update',
+        'as' => 'update.filme'
+    ]
+);
+
+Route::get('/create/filme', 
+	[
+        'uses' => 'FilmeController@create',
+        'as' => 'create.filme'
+	]
+);
